@@ -9,15 +9,11 @@ html, body {
 }
 
 .panel-faq-title {
-	/* font-weight: bold; */
 	color: #00EAEA;
 	cursor: pointer;
 }
 
 .panel-faq-answer {
-	/* padding: 15px; */
-	/* display: none; */
-	/* border: 10px solid red; */
 	height: 0px;
 	overflow: hidden;
 	transition: all 1.35s;
@@ -40,7 +36,6 @@ html, body {
 }
 
 .active {
-	/* overflow: auto; */
 	display: block;
 	height: 300px;
 }
