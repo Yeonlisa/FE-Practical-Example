@@ -68,8 +68,25 @@ window.onload = () => {
         // hTbody.innerHTML = result;
         // -------------------------------------------
         // 키(Key) 순회하면서 key:value 값들 출력하기
+        let ar = new Array();
+        let result2 = '';
 
+        for(let i = 0; i < localStorage.length; i++) {
+            let key = localStorage.key(i);
 
-        // -------------------------------------------
+            // 결과 변수
+            result2 += `<tr>`;
+            result2 += `<td class="align-middle">${key}</td>`;
+            result2 += `<td class="align-middle">${localstorage.getItem(key)}</td>`;
+            result2 += `<td><button class="btnRemove btn">Remove</button></td>`;
+            result2 += `</tr>`;
+
+            // 배열에 저장
+            ar.push(result2);
+        }
+
+        // Append (붙이기)
+        $('#htmlTbody').empty();
+        $('#htmlTbody').append(result2);
     });
 }
