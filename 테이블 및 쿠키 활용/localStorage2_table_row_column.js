@@ -34,5 +34,14 @@ window.onload = () => {
         const newText3 = document.createTextNode('영화보기');
         newCell3.appendChild(newText3);
 
+        // 테이블 row 구하기
+        const tbl = document.getElementById('myTable');
+        
+        // 셀(Cell)이 몇 개인지를 알고 싶다면?
+        const r = table.rows.length - 1;
+        const l = table.rows[r].cells.length;
+        console.log(l); // 해당 row의 cell이 몇 개인지를 출력함.
+
+        // 반복문 순회하면서 각 Cell에 정보 값을 셋팅.
     });
 }
