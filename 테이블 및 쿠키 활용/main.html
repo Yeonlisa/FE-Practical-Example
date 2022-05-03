@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical Exam - localStorage 2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script src="./localStorage2_table_row_column.js"></script>
+    <link rel="stylesheet" href="./localStorage2_table_row_column.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h3 style="text-align: center; padding-top: 50px">
+            Local Data
+            <small class="text-muted">with localStorage data view</small>
+        </h3>
+        <br>
+        <button class="btnCrc">Create row and column</button>
+        <table class="table table-bordered table-striped table-dark">
+            <caption>List of localStorage</caption>
+            <thead class="thead-light text-center">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Pastime</th>
+                </tr>
+            </thead>
+            <tbody class="text-center" id="htmlTbody">
+                <!-- <tr>
+                    <td class="align-middle">background-color</td>
+                    <td class="align-middle">#FF0000</td>
+                    <td><button class="btnRemove btn">Remove</button></td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

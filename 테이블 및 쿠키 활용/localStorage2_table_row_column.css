@@ -1,0 +1,25 @@
+button {
+	width: 300px;
+	background-color: #00FFFF;
+	border: none;
+	color: #000;
+	cursor: pointer;
+	padding: 10px 25px;
+	float: right;
+	margin-bottom: 10px;
+}
+
+button:hover {
+	background-color: black;
+	color: #fff;
+	transition: all .35s;
+	cursor: pointer;
+}
+
+.btn {
+	background-color: #000;
+	color: #fff;
+	width: 150px;
+	margin-bottom: 0px;
+	float: none;
+}
