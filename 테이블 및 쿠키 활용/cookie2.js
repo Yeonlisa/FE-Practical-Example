@@ -63,6 +63,11 @@ const allDelCookies = function(domain, path) {
     for(let i = 0; i < cookies.length; i++) {
         cookies[i].split('=')[0] + '=; expires = ' + expiration;
     }
+
+    // 반복운 역순 과정
+    // for(let i = cookies.length - 1; i >= 0; i--) {
+    //     cookies[i].split('=')[0] + '=; expires = ' + expiration;
+    // }
     alert('쿠키를 모두 삭제하였습니다.');
 }
 
