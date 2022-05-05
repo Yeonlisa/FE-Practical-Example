@@ -28,6 +28,7 @@ const setCookie = function(cname, cvalue, cexpire) {
 
     // 쿠키 저장하기
     document.cookie = cookies;
+    document.getElementById('form').reset(); // 한방에 초기화.
     alert('쿠키를 생성하였습니다.');
 }
 
