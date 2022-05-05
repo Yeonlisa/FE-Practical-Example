@@ -51,6 +51,21 @@ const delCookie = function(cname) {
     alert('쿠키를 삭제하였습니다.');
 }
 
+// 쿠키 전체삭제
+const allDelCookies = function(domain, path) {
+    domain = domain || document.domain,
+    path = path || '/';
+
+    const cookies = document.cookie.split(';');
+    const expiration = 'Sat, 01 Jan 1972 00:00:00 GMT';
+
+    // 반복문 순회하면서 쿠키 전체 삭제
+    for(let i = 0; i < cookies.length; i++) {
+        cookies[i].split('=')[0] + '=; expires = ' + expiration;
+    }
+    alert('쿠키를 모두 삭제하였습니다.');
+}
+
 // addEventListener
 const form = document.getElementById('form');
 form.addEventListener('submit', setCookie);
