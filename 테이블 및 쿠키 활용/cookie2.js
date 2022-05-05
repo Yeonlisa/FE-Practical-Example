@@ -1,6 +1,17 @@
 // JS 쿠키 사용자 정의 함수 및 전체 삭제 만들기
 
 // 쿠키 읽기
+const getCookie = function () {
+    // 로컬에 저장된 모든 쿠키 읽어오기
+    const allCookies = document.cookie; // 하나의 문자열로 리턴.
+    
+    // if 조건문 -> 쿠키가 있으면
+    if(allCookies != '') {
+        alert('저장된 쿠키의 값은 " ' + allCookies);
+    } else {
+        alert('저장된 쿠키가 없습니다.');
+    }
+}
 
 // 쿠키 생성하기 -> 함수 표현식
 const setCookie = function(cname, cvalue, cexpire) {
@@ -30,6 +41,14 @@ const setCookie = function(cname, cvalue, cexpire) {
     document.cookie = cookies;
     document.getElementById('form').reset(); // 한방에 초기화.
     alert('쿠키를 생성하였습니다.');
+}
+
+// 쿠키 삭제하기
+const delCookie = function(cname) {
+    // 쿠키 삭제는? -> 이미 한참 지나간 시간을 입력해버림으로써 쿠키를 삭제시킨다.
+    document.cookie = 'userid = ; expires = Sat, 01 Jabn 1972 00:00:00 GMT';
+    setCookie(cname,'',0);
+    alert('쿠키를 삭제하였습니다.');
 }
 
 // addEventListener
