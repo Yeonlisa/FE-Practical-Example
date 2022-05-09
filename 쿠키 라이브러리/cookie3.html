@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Cookie</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./cookie3.css">
+</head>
+<body>
+    <div class="container">
+        <h3 style="text-align:center; padding-top: 50px">
+            JS Cookie
+            <small class="text-muted">with jQuery Cookie Library</small>
+        </h3>
+        <br>
+        <table class="table table-bordered table-striped table-dark table-hover">
+            <caption>List of Cookies</caption>
+            <thead class="thead-light text-center">
+                <tr>
+                    <th width="60%">Check list</th>
+                    <th>Click</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <tr>
+                    <td class="align-middle">쿠키 확인하기</td>
+                    <td><button onclick="getCookie();">Get Cookie</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="./cookie3.js"></script>
+</body>
+</html>
