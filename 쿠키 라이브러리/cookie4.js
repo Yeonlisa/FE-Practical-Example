@@ -39,3 +39,13 @@ const delCookie = function(cname) {
 
 const form = document.getElementById('form');
 form.addEventListener('submit', delCookie);
+
+// [6-1] 쿠키 생성시 옵션 지정과 함꼐 생성되었다면 삭제시에도 -> 똑같이 필요??
+console.clear();
+// Cookies.set('dogid', 'dog1004', {expires: 7, path: '/'});
+// Cookies.remove('dogid');
+// Cookies.remove('dogid', {path: '/'});
+
+Cookies.set('catid', 'cat1004', {expires: 7, path: '/쿠키%20라이브러리/'});
+// Cookies.remove('catid');
+Cookies.remove('catid', {path: '/쿠키%20라이브러리/'});
