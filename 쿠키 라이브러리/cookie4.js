@@ -49,3 +49,20 @@ console.clear();
 Cookies.set('catid', 'cat1004', {expires: 7, path: '/쿠키%20라이브러리/'});
 // Cookies.remove('catid');
 Cookies.remove('catid', {path: '/쿠키%20라이브러리/'});
+
+// [7] js-cookie 전체 삭제 -> Not possible
+// 보여지는 쿠키들에 대한 전체 삭제를 한다면?
+console.clear();
+console.log(Object.keys(Cookies.get())); // 쿠키 이름만 가져올 때
+
+function allDelCookies() {
+    Object.keys(Cookies.get()).forEach(function(cName) {
+        // 할 일 처리
+        let neededOptions = {
+            // domain: "test.com"
+            domain: "localhost"
+        };
+        Cookies.remove(cName, neededOptions);
+    });
+    alert('쿠키가 전체 삭제되었습니다.');
+}
