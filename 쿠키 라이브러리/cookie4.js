@@ -66,3 +66,30 @@ function allDelCookies() {
     });
     alert('쿠키가 전체 삭제되었습니다.');
 }
+
+// [8] userGetCookie 함수 만들기 - 일반적인 For 반복문으로 순회하면서 처리
+console.clear();
+console.log(document.cookie); // userid=superman1004; username=batman; cname=antman
+
+// 쿠키 읽기
+const userGetCookie = function(cname) {
+    
+    let name = cname + '=';
+    console.log(name); // userid=
+
+    let allCookie = decodeURIComponent(document.cookie).split(';'); // ';' 한 칸 띄어쓰기 주의
+    console.log(allCookie);
+
+    // encodeURIComponent는 자바스크립트에서 string을 UTF-8로 인코딩해주는 함수.
+    // decodeURIComponent는 encodeURIComponent로 escape된 문자열을 다시 원래의 문자열로 리턴해주는 함수.
+    // 비슷한 메서드 -> encodeURI, decodeURI, escape, unescape
+
+    let cval = [];
+    for(let i = 0; i < allCookie.length; i++) {
+        console.log(allCookie[i].trim().indexOf(name));
+        // indexOf 메서드의 리턴값 -> 배열일 경우 -> 검색된 항목의 index 값.
+        // 문자열일 경우 -> 검색된 문자열의 첫 글자의 index 값.
+        // 검색 결과가 없을 경우 -> -1 리턴.
+    }
+
+}
