@@ -90,6 +90,15 @@ const userGetCookie = function(cname) {
         // indexOf 메서드의 리턴값 -> 배열일 경우 -> 검색된 항목의 index 값.
         // 문자열일 경우 -> 검색된 문자열의 첫 글자의 index 값.
         // 검색 결과가 없을 경우 -> -1 리턴.
-    }
 
+        // if 조건문 -> ["username=batman", "cname=antman", "userid=superman1004"]
+        if(allCookie[i].trim().indexOf(name) == 0) {
+            cval = allCookie[i].trim().split('=');
+            console.log(cval); // ["userid", "superman1004"]
+            console.log(cval[1]); // superman1004
+            console.log(cval.length); // 2 -> 이것의 의미는? -> 배열의 0과 1 -> 0: 쿠키명, 1: 쿠키값 이라는 뜻.
+        }
+    }
+    return (cval.length > 0) ? cval[1] : "nothing";
 }
+console.log('userGetCookie 함수로 리턴된 값은 = ' + userGetCookie('userid'));
