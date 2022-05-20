@@ -102,3 +102,19 @@ const userGetCookie = function(cname) {
     return (cval.length > 0) ? cval[1] : "nothing";
 }
 console.log('userGetCookie 함수로 리턴된 값은 = ' + userGetCookie('userid'));
+
+// [8-1] userGetCookie 함수 만들기 연습 -> oneGetCookie
+const oneGetCookie = function(cname) {
+    let name = cname + '=';
+    let allCookie = decodeURIComponent(document.cookie).split('; ');
+
+    let cval = [];
+    for(let i = 0; i < allCookie.length; i++) {
+        if(allCookie[i].trim().indexOf(name) == 0) { // userid=superman1004
+            cval = allCookie[i].trim().split('=');
+        } 
+    }
+    return (cval.length > 0) ? cval[1] : "no result";
+}
+console.clear();
+console.log('oneGetCookie 함수로 리턴되는 값은 = ' + oneGetCookie('userid'));
