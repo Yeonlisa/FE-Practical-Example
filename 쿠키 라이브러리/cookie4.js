@@ -162,15 +162,32 @@ const userGetCookie3 = function(cname) {
     const str = document.cookie;
     const isCookieIdx = str.indexOf(cname);
     // boolean isCookie = str.contains(cname); // Java에서는 contains()사용 -> 대신 -> indexOf() 메서드 사용.
-    console.log(isCookieIdx); // cname 검색시 17이 반환, 없으면 -1
+    // console.log(isCookieIdx); // cname 검색시 17이 반환, 없으면 -1
 
     // 3. 쿠키 가져와서 분리 -> 러치
     let result = 'no result';
     if(isCookieIdx >= 0) {
         // 할 일 처리
-        
+        result = document.cookie // username=batman; cname=antman; userid=superman1004
+            .split('; ')
+            .find(item => item.startsWith(cname)) // 특정 문자열로 시작하는지를 체크 -> true 반환, 아니면 false
+            .split('=')[1];
     }
     return result;
 }
 
 console.log('userGetCookie3 함수로 리턴된 값은 = '+ userGetCookie3('username'));
+
+function showCval(cname) {
+    const rst = document.getElementById('cval');
+    rst.textContent = userGetCookie3(cname);
+}
+
+function clearCval() {
+    const rst = document.getElementById('cval');
+    rst.textContent = '';
+}
+
+// JS .value vs .textContent 차이점
+// input과 같은 form 요소에는 -> .value 메서드 사용
+// div, span 등의 요소에는 -> .textContent 메서드 사용
