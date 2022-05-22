@@ -67,4 +67,33 @@ button:hover {
     position: absolute;
     bottom: 40px;
     right: 40px;
+    border-bottom: 1px solid #000;
+    text-decoration: none;
+    padding: 2px 0;
+    font-size: 13px;
+    text-transform: uppercase;
 }
+
+.popup .banner .btnConcealWindowToday {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.popup .banner .btnConcealWindowToday::before {
+    content: '✖️ ';
+}
+
+.popup .banner .btnClose::before {
+    content: '✔️ ';
+}
+
+.body::first-letter {
+    font-size: 200%;
+    background: #fff;
+    color: #000;
+    padding: 0 10px;
+    margin-right: 3px;
+}
+
