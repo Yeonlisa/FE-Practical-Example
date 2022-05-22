@@ -148,3 +148,29 @@ const userGetCookie2 = function(cname) {
 }
 
 console.log('userGetCookie2 함수로 리턴된 값은 = '+ userGetCookie2('userid'));
+
+// [10] ES6 버전으로 userGetCookie3 함수 만들기
+console.clear();
+console.log(document.cookie); // username=batman; cname=antman; userid=superman1004
+
+const userGetCookie3 = function(cname) {
+
+    // 1. cname 수정
+    cname = cname + '='; // userid=
+
+    // 2. 문자열(쿠키명) 찾기
+    const str = document.cookie;
+    const isCookieIdx = str.indexOf(cname);
+    // boolean isCookie = str.contains(cname); // Java에서는 contains()사용 -> 대신 -> indexOf() 메서드 사용.
+    console.log(isCookieIdx); // cname 검색시 17이 반환, 없으면 -1
+
+    // 3. 쿠키 가져와서 분리 -> 러치
+    let result = 'no result';
+    if(isCookieIdx >= 0) {
+        // 할 일 처리
+        
+    }
+    return result;
+}
+
+console.log('userGetCookie3 함수로 리턴된 값은 = '+ userGetCookie3('username'));
