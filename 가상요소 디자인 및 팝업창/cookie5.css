@@ -12,3 +12,25 @@ button:hover {
     color: #fff;
     transition: all .35s;
 }
+
+.popup {
+	border: 10px solid;
+    position: fixed;
+    left: 100px;
+    top: 100px;
+    width: 400px;
+    height: 400px;
+    background-color: #000;
+    opacity: 0.5;
+}
+
+.popup .banner {
+	border: 10px solid red;
+    position: fixed;
+    left: 150px;
+    top: 150px;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    background-color: #fff;
+}
