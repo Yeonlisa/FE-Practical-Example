@@ -191,3 +191,45 @@ function clearCval() {
 // JS .value vs .textContent 차이점
 // input과 같은 form 요소에는 -> .value 메서드 사용
 // div, span 등의 요소에는 -> .textContent 메서드 사용
+
+// [10-1] startsWith() 사용법
+// 문자열 검색시 특정 문자열로 시작하는지를 체크 -> true 또는 false로 반환
+// 즉, 검색할 문자열로 시작하면 true, 아니면 false
+// str.startsWith(검색문자열[, position])
+// position 옵션은 '검색문자열'을 탐색할 위치 지정. 기본값 -> 0
+// 대소문자 구분
+
+// 문자열인 경우
+console.clear();
+const str = "간장 공장 공장장은 강공장장 이름이고, 된장 공장 공장장은 장공장장 이름이다.";
+
+console.log(str.startsWith('강공장장')); // false
+console.log(str.startsWith('박공장장')); // false
+console.log(str.startsWith('강공장장', 10)); // false
+
+console.log(str.startsWith('간장')); // true
+console.log(str.startsWith('강공장장', 11)); // true
+
+// 배열인 경우
+console.clear();
+const ar = "dog=5; cat=7; hippo=9; lion=4; tiger=2";
+console.log(typeof ar); // string
+
+const ar2 = ar.split('; ');
+console.log(ar2);
+console.log(typeof ar2); // object
+
+const ar3 = ar2.find(item => item.startsWith('hippo=')); // 주어진 조건의 함수를 만족하는 첫 번째 요소의 값을 반환. 그런게 없다면 undefined 반환
+console.log(ar3); // hippo=9
+
+const ar4 = ar3.split('=');
+console.log(ar4); // ["hippo", "9"]
+
+console.log(ar4[1]); // 9
+console.log(ar3.split('=')[1]); // 9 -> ar3에서 바로 출력
+
+const ar5 = ar2.findIndex(item => item.startsWith('hippo=')); // 주어진 조건의 함수를 만족하는 첫 번째 요소의 인덱스를 반환. 그런게 없다면 -1 반환
+console.log(ar5); // 2
+
+// 배열 요소의 위치를 찾고자 하면 -> .indexOf()
+// 배열 요소가 해당 배열에 존재하는지 체크하려면 -> .indexOf() 또는 .includes()
