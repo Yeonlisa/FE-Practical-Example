@@ -14,7 +14,7 @@ button:hover {
 }
 
 .popup {
-
+    display: none;
 }
 
 .popup::before {
