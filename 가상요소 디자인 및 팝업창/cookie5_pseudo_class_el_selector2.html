@@ -33,13 +33,26 @@
         }
         ul {
             border: 0px solid red;
-            /* overflow: auto; */
+            padding: 2px 0;
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
         }
         li {
             list-style: none;
             float: left;
             padding: 0 80px;
             border: 0px solid;
+        }
+        li::before {
+            content: '|';
+            color: blue;
+            font-weight: bold;
+            float: right;
+            margin-right: -83px;
+        }
+        li:last-child::before {
+            content: '';
         }
     </style>
 </head>
