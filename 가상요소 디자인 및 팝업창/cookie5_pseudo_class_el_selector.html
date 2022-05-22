@@ -5,11 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pseudo Class vs Element</title>
-    <style>
-        
-    </style>
 </head>
 <body>
-    
+    <style>
+        a:link {color: red; text-decoration: none}
+        a:hover {color: blue; text-decoration: underline}
+        a:active {color: yellow}
+        a:visited {color: brown}
+        a:focus {background-color: #000; color: yellow}
+        input:focus {background-color: red; color: #FFF}
+        input:last-child:focus {background-color: green}
+    </style>
+    <a href="#">가상 클래스</a>
+    <input type="text">
+    <input type="text">
+    <input type="text">
 </body>
 </html>
