@@ -118,3 +118,33 @@ const oneGetCookie = function(cname) {
 }
 console.clear();
 console.log('oneGetCookie 함수로 리턴되는 값은 = ' + oneGetCookie('userid'));
+
+// [9] forEach 메서드를 이용한 userGetCookie2 함수 만들기
+console.clear();
+console.log(document.cookie); // username=batman; cname=antman; userid=superman1004
+
+const userGetCookie2 = function(cname) {
+
+    // 1. 객체 변수 선언
+    let cookie = {}; // {username="batman", cname="antman", userid="superman1004"} <- 이렇게 저장시킬려고함
+
+    // 2. 반복 처리 - forEach()
+    document.cookie.split(';').forEach(function(el) {
+
+        // 할 일 처리
+        // el = el.trim(); // 위에서 공백 제거를 처리하지 않고 여기서 한다면
+        // console.log(el);
+
+        let [k, v] = el.split('=');
+        // console.log(k);
+        console.log(k.trim()); // 공백 제거를 여기서 처리할 수도 있음.
+
+        cookie[k.trim()] = v;
+        console.log(cookie);
+    });
+
+    // return cookie[cname]; // superman1004
+    return (cookie[cname] != undefined) ? cookie[cname] : "no result";
+}
+
+console.log('userGetCookie2 함수로 리턴된 값은 = '+ userGetCookie2('userid'));
