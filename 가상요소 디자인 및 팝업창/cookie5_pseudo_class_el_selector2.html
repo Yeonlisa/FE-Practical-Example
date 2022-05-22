@@ -26,14 +26,20 @@
             padding: 15px;
             background-color: #fff;
         }
+        ul::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
         ul {
-            border: 1px solid red;
-            overflow: auto;
-            display: inline-block;
+            border: 0px solid red;
+            /* overflow: auto; */
         }
         li {
             list-style: none;
             float: left;
+            padding: 0 80px;
+            border: 0px solid;
         }
     </style>
 </head>
