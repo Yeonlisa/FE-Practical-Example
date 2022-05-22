@@ -7,7 +7,7 @@
     <title>Pseudo Class vs Element</title>
 </head>
 <body>
-    <style>
+    <!-- <style>
         a:link {color: red; text-decoration: none}
         a:hover {color: blue; text-decoration: underline}
         a:active {color: yellow}
@@ -19,6 +19,27 @@
     <a href="#">가상 클래스</a>
     <input type="text">
     <input type="text">
-    <input type="text">
+    <input type="text"> -->
+    <style>
+        .test {border: 1px solid}
+        .test ul li:first-child {font-weight: bold; color: blue}
+        .test ul li:first-child::first-letter {font-weight: bold; color: red; font-size: 200%}
+        .test2::first-line {background-color: green; color: #FFF; font-weight: bold}
+        .test2::first-letter {background-color: red; color: #FFF; font-weight: bold; font-size: 200%; padding: 10px}
+        .test2::before {content:url('https://cdn.pixabay.com/photo/2014/06/18/19/24/facebook-371640_960_720.png');}
+        .test2::after {content:url('https://cdn.pixabay.com/photo/2014/06/18/19/24/facebook-371640_960_720.png');}
+        .btnClose::before {content: '❌ ';}
+    </style>
+    <p class="btnClose">창 닫기</p>
+    <br><br>
+
+    <div class="test">
+        <ul>
+            <li>영화 보니깐 기분 좋다.</li>
+            <li>보는 내내 몰입감과 긴장감이 있어서 좋았다.</li>
+            <li>한국 영화가 요즘 흥행하고 있다.</li>
+        </ul>
+    </div>
+    <p class="test2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 </body>
 </html>
