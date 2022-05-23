@@ -65,9 +65,9 @@ button:hover {
 .popup .banner .btnClose {
     color: #fff;
     position: absolute;
-    bottom: 40px;
-    right: 40px;
-    border-bottom: 1px solid #000;
+    top: -75px;
+    right: 15px;
+    /* border-bottom: 1px solid #000; */
     text-decoration: none;
     padding: 2px 0;
     font-size: 13px;
@@ -79,6 +79,9 @@ button:hover {
     font-size: 14px;
     font-weight: 900;
     text-decoration: none;
+    position: absolute;
+    top: -33px;
+    left: 25px;
 }
 
 .popup .banner .btnConcealWindowToday::before {
@@ -86,7 +89,8 @@ button:hover {
 }
 
 .popup .banner .btnClose::before {
-    content: '✔️ ';
+    content: '✖️ ';
+    font-size: 350%;
 }
 
 .body::first-letter {

@@ -53,3 +53,21 @@ function concealPopup(number, expiration) {
 		
 	}
 }
+
+// 한 개 쿠키 삭제
+const oneDelCookie = function(cname) {
+	event.preventDefault();
+	
+	// 할 일 처리
+	cname = document.getElementById('cname');
+	let cval = cname.value;
+	console.log(cval);
+	
+	Cookies.remove(cval);
+	cname.value = '';
+	cname.focus();
+	alert(`${ cval } 쿠키를 삭제하였습니다.`);
+}
+
+const form = document.getElementById('form');
+form.addEventListener('submit', oneDelCookie);
