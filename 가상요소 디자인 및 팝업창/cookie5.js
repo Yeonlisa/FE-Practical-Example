@@ -13,13 +13,43 @@ console.log(popupCookie);
 if(popupCookie == undefined) 
 	showPopup();
 
+
+// [닫기] 버튼 클릭시
+btnClose.addEventListener('click', function() {
+	concealPopup(0);
+});
+
+// [오늘 하루 창 닫기] 버튼 클릭시
+btnConcealWindowToday.addEventListener('click', function() {
+	concealPopup(1, 1);
+} );
+
 // 팝업 창 띄우기
 function showPopup() {
 	popup.style.display = 'block';
 }
 
-// [닫기] 버튼 클릭시
-btnClose.addEventListener('click', function() {
-	// 할 일 처리
-    popup.style.display = 'block';
-});
+// 팝업 창 감추기
+function concealPopup(number, expiration) {
+	console.log(number + ", " + expiration);
+	
+	// [닫기] 버튼 클릭시 -> 0
+	popup.style.display = 'none';
+	
+	// [오늘 하루 창 닫기] 버튼 클릭시 -> 1
+	if(number === 1) {
+		
+		// popupCookie 값 체크
+		if(Cookies.get('popupCookie') == undefined) {
+			
+			// 쿠키가 없는 경우 -> popupCookie 라는 이름의 쿠키를 추가.
+			Cookies.set('popupCookie', 'yes', { expires: expiration, path: '/' });
+			/*
+				설명 :
+					path값을 '/'로 주면 사이트내 모든 페이지에서 쿠키가 유효.
+					만약, 어떤 특정 페이지에서만 유효하게 하려면 페이지 경로를 직접 작성.
+			*/
+		}
+		
+	}
+}
